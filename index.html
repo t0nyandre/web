@@ -1,6 +1,7 @@
 <html>
 <head>
 <style>
+/* ---------- GLOBAL PAGE STYLING ---------- */
 body {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   background-color: #fafafa;
@@ -9,7 +10,7 @@ body {
   padding: 2rem;
 }
 
-/* Header container */
+/* ---------- HEADER + LOGO ---------- */
 .page-header {
   position: sticky;
   top: 0;
@@ -17,12 +18,10 @@ body {
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
-  z-index: 10;
-  transition: all 0.3s ease;
+  z-index: 20;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Logo image */
 .logo {
   height: 125px;
   width: auto;
@@ -30,32 +29,35 @@ body {
   transition: height 0.3s ease, transform 0.3s ease;
 }
 
-/* Shrunk version */
 .logo.shrink {
   height: 75px;
   transform: translateY(2px);
 }
 
+/* ---------- TABLE CONTAINER ---------- */
 .table-container {
-  overflow-x: auto;       /* Allow horizontal scroll only */
+  overflow-x: auto;          /* Horizontal scroll only */
   max-width: 100%;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   background: white;
+  margin-top: 1.5rem;
 }
 
-/* Base table */
+/* ---------- TABLE BASE ---------- */
 table {
   width: 100%;
   border-collapse: collapse;
   border-radius: 12px;
+  background-color: white;
   min-width: 900px;
 }
 
+/* ---------- HEADER CELLS (STICKY) ---------- */
 thead th {
   position: sticky;
   top: 0;
-  background: #f5f5f5;    /* Required for stickiness to appear */
+  background: #f5f5f5;
   backdrop-filter: blur(4px);
   z-index: 5;
   font-weight: 600;
@@ -66,16 +68,7 @@ thead th {
   border-bottom: 2px solid #ddd;
 }
 
-/* Cell styles */
-th, td {
-  text-align: center;
-  padding: 0.75rem 0.5rem;
-  border-bottom: 1px solid #e6e6e6;
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-
-/* Sticky first column */
+/* ---------- FIRST COLUMN (STICKY) ---------- */
 th:first-child,
 td:first-child {
   position: sticky;
@@ -87,23 +80,33 @@ td:first-child {
   border-right: 1px solid #eee;
 }
 
-/* If the first column cell is also part of the header row */
+/* Make sure top-left cell (header + first col) is above all */
 thead th:first-child {
   z-index: 6;
   background-color: #f5f5f5;
 }
 
-/* Striped rows */
+/* ---------- TABLE BODY ---------- */
+th, td {
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* ---------- STRIPED ROWS ---------- */
 tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
 
+/* ---------- HOVER EFFECT ---------- */
 tbody tr:hover {
   background-color: #f0f4f8;
   transition: background-color 0.2s ease;
 }
 
-/* Responsive tweaks */
+/* ---------- RESPONSIVE ADJUSTMENTS ---------- */
 @media (max-width: 900px) {
   table {
     font-size: 0.8rem;
@@ -144,6 +147,7 @@ window.addEventListener("scroll", function() {
 });
 </script>
 </body>
+
 
 
 
